@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "demo-bower": "https://github.com/trankhacnam/endo_theme.git",
-    "admin_assets": "https://github.com/trankhacnam/admin_assets.git"
+    "admin_assets": "https://github.com/trankhacnam/admin_assets.git",
+    "ckeditor": "https://github.com/ckeditor/ckeditor4-releases.git#^4.18.0"
   }
 }

@@ -26,6 +26,7 @@ Route::namespace('User')->prefix('pages')->group(function() {
 Route::middleware(['auth', 'verified'])->group(function() {
     Route::namespace('Admin')->prefix('admin')->group(function() {
         Route::get('/', 'HomeController@index')->name('admin.home');
+        Route::resource('blogs', 'BlogController');
     });
 });
 
