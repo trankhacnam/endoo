@@ -1,0 +1,22 @@
+{
+  "name": "endo",
+  "description": "",
+  "main": "",
+  "authors": [
+    "trankhacnam <lrvtrankhacnam@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "demo-bower": "https://github.com/trankhacnam/endo_theme.git",
+    "admin_assets": "https://github.com/trankhacnam/admin_assets.git"
+  }
+}
