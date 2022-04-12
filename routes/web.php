@@ -23,17 +23,11 @@ Route::namespace('User')->prefix('pages')->group(function() {
     Route::get('home', 'HomeController@index')->name('user.home');
 });
 
-// Route::middleware(['auth', 'verified'])->group(function() {
-
-//         Route::namespace('Admin')->prefix('admin')->group(function() {
-//             Route::get('dashboard', 'DashboardController@index')->name('dashboard');
-//             Route::resource('menus','MenuController');
-//         });
-
-// });
-
-// Auth::routes(['verify' => true]);
-
-Route::namespace('Admin')->prefix('admin')->group(function() {
-    Route::get('home', 'HomeController@index')->name('admin.home');
+Route::middleware(['auth', 'verified'])->group(function() {
+    Route::namespace('Admin')->prefix('admin')->group(function() {
+        Route::get('/', 'HomeController@index')->name('admin.home');
+    });
 });
+
+Auth::routes(['verify' => true]);
+

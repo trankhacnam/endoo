@@ -14,14 +14,14 @@
         <title>DigiMedia - Creative SEO HTML5 Template</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="{{ asset('bower_components/endo_theme/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('bower_components/demo-bower/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
 
         <!-- Additional CSS Files -->
-        <link rel="stylesheet" href="{{ asset('bower_components/endo_theme/assets/css/fontawesome.css') }}">
-        <link rel="stylesheet" href="{{ asset('bower_components/endo_theme/assets/css/templatemo-digimedia-v2.css') }}">
-        <link rel="stylesheet" href="{{ asset('bower_components/endo_theme/assets/css/animated.css') }}">
-        <link rel="stylesheet" href="{{ asset('bower_components/endo_theme/assets/css/owl.css') }}">
+        <link rel="stylesheet" href="{{ asset('bower_components/demo-bower/assets/css/fontawesome.css') }}">
+        <link rel="stylesheet" href="{{ asset('bower_components/demo-bower/assets/css/templatemo-digimedia-v2.css') }}">
+        <link rel="stylesheet" href="{{ asset('bower_components/demo-bower/assets/css/animated.css') }}">
+        <link rel="stylesheet" href="{{ asset('bower_components/demo-bower/assets/css/owl.css') }}">
 <!--
 
 TemplateMo 568 DigiMedia
@@ -38,12 +38,12 @@ https://templatemo.com/tm-568-digimedia
     @include('user.layouts.footer')
 
     <!-- Scripts -->
-    <script src="{{ asset('bower_components/endo_theme/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('bower_components/endo_theme/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('bower_components/endo_theme/assets/js/owl-carousel.js') }}"></script>
-    <script src="{{ asset('bower_components/endo_theme/assets/js/animation.js') }}"></script>
-    <script src="{{ asset('bower_components/endo_theme/assets/js/imagesloaded.js') }}"></script>
-    <script src="{{ asset('bower_components/endo_theme/assets/js/custom.js') }}"></script>
+    <script src="{{ asset('bower_components/demo-bower/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('bower_components/demo-bower/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('bower_components/demo-bower/assets/js/owl-carousel.js') }}"></script>
+    <script src="{{ asset('bower_components/demo-bower/assets/js/animation.js') }}"></script>
+    <script src="{{ asset('bower_components/demo-bower/assets/js/imagesloaded.js') }}"></script>
+    <script src="{{ asset('bower_components/demo-bower/assets/js/custom.js') }}"></script>
 
 </body>
 </html>

@@ -204,7 +204,11 @@
             <ul class="dropdown-menu extended logout">
                 <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
                 <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                {{-- <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li> --}}
+                <li><form action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                                <button type="submit" id="logoutBtn">logout</button>
+                            </form></li>
             </ul>
         </li>
         <!-- user login dropdown end -->
