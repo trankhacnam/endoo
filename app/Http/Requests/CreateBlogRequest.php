@@ -13,7 +13,7 @@ class CreateBlogRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,11 +24,11 @@ class CreateBlogRequest extends FormRequest
     public function rules()
     {
         return [
-            'category' => 'required'
-            'summary' => 'required'
-            'title' => 'required'
-            'content' => 'required'
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'category' => 'required',
+            'summary' => 'required',
+            'title' => 'required',
+            'content' => 'required',
+            // 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:20000',
         ];
     }
 
@@ -38,7 +38,7 @@ class CreateBlogRequest extends FormRequest
             'category.required' => 'danh mục không được bỏ trống',
             'summary.required' => 'tóm tắt không được bỏ trống',
             'title.required' => 'tiêu đề không được bỏ trống',
-            'image.*.mimes' => 'sai định dạng ảnh',
+            'thumbnail.mimes' => 'sai định dạng ảnh',
             'image.required' => 'ảnh không được bỏ trống',
         ];
     }

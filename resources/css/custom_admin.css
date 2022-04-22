@@ -1,0 +1,33 @@
+.footer {
+  	position: fixed;
+  	left: 0;
+ 	bottom: 0;
+ 	width: 100%;
+ 	text-align: center;
+}
+
+.table-create-blog td {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.ul-create-blog  li {
+	display: block;
+    padding-bottom: 5px;
+}
+
+@media screen and (max-width: 900px) {
+  	.ul-create-blog  li > button{
+		font-size: 6px !important;
+		width: -webkit-fill-available;
+	}
+}
+
+@media screen and (min-width: 900px) {
+  	.ul-create-blog  li > button{
+		font-size: 11px !important;
+	    /* width: -webkit-fill-available; */
+	    width: 28% !important;
+	}
+}

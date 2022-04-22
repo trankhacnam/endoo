@@ -22,6 +22,11 @@
         <link rel="stylesheet" href="{{ asset('bower_components/demo-bower/assets/css/templatemo-digimedia-v2.css') }}">
         <link rel="stylesheet" href="{{ asset('bower_components/demo-bower/assets/css/animated.css') }}">
         <link rel="stylesheet" href="{{ asset('bower_components/demo-bower/assets/css/owl.css') }}">
+
+        <link rel="stylesheet" href="{{ asset('bower_components/modal/fonts/icomoon/style.css') }}">
+        <!-- Style -->
+        <link rel="stylesheet" href="{{ asset('bower_components/modal/css/style.css') }}">
+        @yield('custom-css')
 <!--
 
 TemplateMo 568 DigiMedia
@@ -44,6 +49,10 @@ https://templatemo.com/tm-568-digimedia
     <script src="{{ asset('bower_components/demo-bower/assets/js/animation.js') }}"></script>
     <script src="{{ asset('bower_components/demo-bower/assets/js/imagesloaded.js') }}"></script>
     <script src="{{ asset('bower_components/demo-bower/assets/js/custom.js') }}"></script>
+
+    <script src="{{ asset('bower_components/modal/js/popper.min.js') }}"></script>
+    <script src="{{ asset('bower_components/modal/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bower_components/modal/js/main.js') }}"></script>
 
 </body>
 </html>
