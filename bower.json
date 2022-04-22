@@ -18,6 +18,8 @@
   "dependencies": {
     "demo-bower": "https://github.com/trankhacnam/endo_theme.git",
     "admin_assets": "https://github.com/trankhacnam/admin_assets.git",
-    "ckeditor": "https://github.com/ckeditor/ckeditor4-releases.git#^4.18.0"
+    "ckeditor": "https://github.com/ckeditor/ckeditor4-releases.git#^4.18.0",
+    "Font-Awesome": "https://github.com/FortAwesome/Font-Awesome.git#^6.1.1",
+    "modal": "https://github.com/trankhacnam/modal.git"
   }
 }

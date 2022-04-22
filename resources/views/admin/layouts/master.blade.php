@@ -31,6 +31,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="{{ asset('bower_components/admin_assets/js/jquery2.0.3.min.js') }}"></script>
 <script src="{{ asset('bower_components/admin_assets/js/raphael-min.js') }}"></script>
 <script src="{{ asset('bower_components/admin_assets/js/morris.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('bower_components/admin_assets/css/font.css') }}" type="text/css"/>
+<link href="{{ asset('bower_components/admin_assets/css/font-awesome.css') }}" rel="stylesheet"> 
+
+
+ <link rel="stylesheet" href="{{ asset('bower_components/modal/fonts/icomoon/style.css') }}">
+<!-- Style -->
+<link rel="stylesheet" href="{{ asset('bower_components/modal/css/style.css') }}">
+@yield('custom-css')
+
 </head>
 <body>
 <section id="container">
@@ -44,5 +53,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="{{ asset('bower_components/admin_assets/js/jquery.slimscroll.js') }}"></script>
 <script src="{{ asset('bower_components/admin_assets/js/jquery.nicescroll.js') }}"></script>
 <script src="{{ asset('bower_components/admin_assets/js/jquery.scrollTo.js') }}"></script>
+<script src="{{ asset('bower_components/modal/js/jquery-3.3.1.min.js') }}"></script>
+
+<script src="{{ asset('bower_components/modal/js/popper.min.js') }}"></script>
+<script src="{{ asset('bower_components/modal/js/main.js') }}"></script>
 </body>
 </html>

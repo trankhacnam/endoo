@@ -423,71 +423,47 @@
                         <div class="line-dec"></div>
                     </div>
                 </div>
-                <div class="col-lg-6 show-up wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                <div class="col-lg-6 show-up wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-toggle="modal" data-target="#show-up-modal">
                     <div class="blog-post">
                         <div class="thumb">
-                            <a href="#"><img src="assets/images/blog-post-01.jpg" alt=""></a>
+                            <a><img src="{{ asset('storage/images') . '/' . $blogs[1]->image }}" alt=""></a>
                         </div>
                         <div class="down-content">
-                            <span class="category">SEO Analysis</span>
-                            <span class="date">03 August 2021</span>
-                            <a href="#"><h4>Lorem Ipsum Dolor Sit Amet, Consectetur Adelore
-                                Eiusmod Tempor Incididunt</h4></a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doers itii eiumod deis tempor incididunt ut labore.</p>
-                            <span class="author"><img src="assets/images/author-post.jpg" alt="">By: Andrea Mentuzi</span>
-                            <div class="border-first-button"><a href="#">Discover More</a></div>
+                            <span class="category">{{ $blogs[0]->category }}</span>
+                            <span class="date">{{ $blogs[0]->created_at }}</span>
+                            <a href="#"><h4>{{ $blogs[0]->title }}</h4></a>
+                            <p>{{ $blogs[0]->summary }}</p>
+                            <span class="author"><img src="{{ asset('bower_components/demo-bower/assets/images/author-post.jpg') }}" alt="">By: Endo.vn</span>
+                            <div class="border-first-button" data-toggle="modal" data-target="#show-up-modal"><a>Read More</a></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                     <div class="blog-posts">
                         <div class="row">
-                            <div class="col-lg-12">
-                                <div class="post-item">
-                                    <div class="thumb">
-                                        <a href="#"><img src="assets/images/blog-post-02.jpg" alt=""></a>
+                            @foreach ($blogs as $key => $blog)
+                                @if ($key > 0)
+                                    <div class="col-lg-12" data-toggle="modal" data-target="#show-up-modal-{{ $key }}">
+                                        <div class="post-item">
+                                            <div class="thumb image-blog">
+                                                <a><img src="{{ asset('storage/images') . '/' . $blog->image }}" alt="" style="max-width: 230px"></a>
+                                            </div>
+                                            <div class="right-content">
+                                                <span class="category">{{ $blog->category }}</span>
+                                                <span class="date">{{ $blog->created_at }}</span>
+                                                <a><h4>{{ $blog->title }}</h4></a>
+                                                <p>{{ $blog->summary }}</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="right-content">
-                                        <span class="category">SEO Analysis</span>
-                                        <span class="date">24 September 2021</span>
-                                        <a href="#"><h4>Lorem Ipsum Dolor Sit Amei Eiusmod Tempor</h4></a>
-                                        <p>Lorem ipsum dolor sit amet, cocteturi adipiscing eliterski.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="post-item">
-                                    <div class="thumb">
-                                        <a href="#"><img src="assets/images/blog-post-03.jpg" alt=""></a>
-                                    </div>
-                                    <div class="right-content">
-                                        <span class="category">SEO Analysis</span>
-                                        <span class="date">24 September 2021</span>
-                                        <a href="#"><h4>Lorem Ipsum Dolor Sit Amei Eiusmod Tempor</h4></a>
-                                        <p>Lorem ipsum dolor sit amet, cocteturi adipiscing eliterski.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="post-item last-post-item">
-                                    <div class="thumb">
-                                        <a href="#"><img src="assets/images/blog-post-04.jpg" alt=""></a>
-                                    </div>
-                                    <div class="right-content">
-                                        <span class="category">SEO Analysis</span>
-                                        <span class="date">24 September 2021</span>
-                                        <a href="#"><h4>Lorem Ipsum Dolor Sit Amei Eiusmod Tempor</h4></a>
-                                        <p>Lorem ipsum dolor sit amet, cocteturi adipiscing eliterski.</p>
-                                    </div>
-                                </div>
-                            </div>
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <div id="contact" class="contact-us section">
         <div class="container">
             <div class="row">
@@ -568,5 +544,52 @@
             </div>
         </div>
     </div>
-
+    <div class="modal fade" id="show-up-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-md  modal-dialog-centered" role="document" style="max-width: 1350px">
+            <div class="modal-content rounded-0">
+                <div class="modal-body py-0">
+                    <div class="d-block main-content">
+                        <img src="{{ asset('storage/images') . '/' . $blogs[0]->image }}" alt="Image" class="img-fluid" style="background-color: #b2fcff; max-height: 500px;">
+                        <div class="content-text p-4" >
+                            <h3 class="mb-4">{{ $blogs[0]->title }}</h3>
+                            <div class="mb-4 blog-content">{{!! $blogs[0]->content !!}</div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="ml-auto">
+                                <a href="#" class="btn btn-primary px-4" data-dismiss="modal" style="margin-bottom: 20px; margin-right: 20px;">Close</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @foreach ($blogs as $key => $blog)
+        @if ($key > 0)
+            <div class="modal fade" id="show-up-modal-{{ $key }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-md  modal-dialog-centered" role="document" style="max-width: 1350px;">
+                    <div class="modal-content rounded-0">
+                        <div class="modal-body py-0">
+                            <div class="d-block main-content">
+                                <img src="{{ asset('storage/images') . '/' . $blog->image }}" alt="Image" class="img-fluid" style="background-color: #b2fcff; max-height: 500px;" >
+                                <div class="content-text p-4">
+                                    <h3 class="mb-4">{{ $blog->title }}</h3>
+                                    <div class="mb-4 blog-content">{!! $blog->content !!}</div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="ml-auto">
+                                        <a href="#" class="btn btn-primary px-4" data-dismiss="modal" style="margin-bottom: 20px; margin-right: 20px;">Close</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+    @endforeach
 @stop
+
+@section('custom-css')
+    <link rel="stylesheet" href="{{ asset('css/custom_home.css') }}">
+@endsection

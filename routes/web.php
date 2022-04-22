@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->route('user.home');;
+    return redirect()->route('user.home');
 });
 
 
@@ -25,6 +25,12 @@ Route::namespace('User')->prefix('pages')->group(function() {
 
 Route::middleware(['auth', 'verified'])->group(function() {
     Route::namespace('Admin')->prefix('admin')->group(function() {
+        Route::any('/ckfinder/connector', '\CKSource\CKFinderBridge\Controller\CKFinderController@requestAction')
+            ->name('ckfinder_connector');
+
+        Route::any('/ckfinder/browser', '\CKSource\CKFinderBridge\Controller\CKFinderController@browserAction')
+            ->name('ckfinder_browser');
+            
         Route::get('/', 'HomeController@index')->name('admin.home');
         Route::resource('blogs', 'BlogController');
     });

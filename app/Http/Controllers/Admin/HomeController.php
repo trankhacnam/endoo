@@ -9,6 +9,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('admin.pages.blog.index');
+        return redirect()->route('blogs.index');
     }
 }

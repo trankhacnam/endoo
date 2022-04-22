@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateBlogRequest;
 use App\Blog;
+use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
@@ -15,9 +16,9 @@ class BlogController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        // $blogs = Blog::paginate(4);
-        // return 
+    {   
+        $blogs = Blog::paginate(2);
+        return view('admin.pages.blog.index', compact('blogs'));
     }
 
     /**
@@ -37,10 +38,25 @@ class BlogController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(CreateBlogRequest $request)
-    {
-        $imageName = time().'.'.$request->image->extension();  
-        $request->image->storeAs('images',$imageName ,'local');
-        
+    {   
+        $blog = new Blog;
+            $blog->category = $request->category;
+            $blog->title = $request->title;
+            $blog->summary = $request->summary;
+            $blog->content = $request->content;
+            $blog->user_id = Auth::id();
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->storeAs('images', $imageName, 'public');
+
+            $blog->image = $imageName;
+        }
+
+        $blog->save();
+
+        return redirect()->route('blogs.index');
     }
 
     /**
