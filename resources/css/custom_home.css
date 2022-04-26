@@ -9,3 +9,28 @@
 	}
 }
 */
+/*.modal-dialog {
+	overflow: scroll;
+}*/
+
+.main-content{
+	overflow: scroll;
+}
+
+.services .right-image  p {
+	margin-bottom: 30px;
+}
+
+.services .right-image h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fe664e !important;
+}
+
+.portfolio-item .thumb {
+	padding: 30px;
+}
+
+.portfolio-item .thumb {
+    min-height: 400px;
+}
